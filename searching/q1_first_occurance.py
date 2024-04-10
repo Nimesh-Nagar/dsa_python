@@ -1,3 +1,4 @@
+
 # find the index of first occurance of number 
 
 ###################### Linear Search Approch ######################
