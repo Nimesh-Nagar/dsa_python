@@ -16,24 +16,24 @@ def last_occur_b(arr, n):
     while low <= high:
         mid = (low + high)//2
 
-        if n > arr[mid]:
+        if arr[mid] > n:
+            high = mid - 1
+        elif arr[mid] < n:
             low = mid + 1
-        elif n < arr[mid]:
-            high = mid + 1
 
         else:
-            if arr[mid] == len(arr) or arr[mid] != arr[mid+1]:
+            if mid == len(arr) - 1 or arr[mid] != arr[mid+1]:
                 return mid
             else:
                 low = mid + 1
-
+    return -1
 
 
 arr = [5, 10, 10, 20, 20, 40]
-num = 20
+print(arr)
+num = int(input("Enter Number to find Last Occurance : "))
 
 # index = last_occurance(arr, num)
-
 index = last_occur_b(arr, num)
 
 if index >= 0:
