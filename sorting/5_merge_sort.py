@@ -9,11 +9,11 @@ def merge_subarray(arr, low, mid, high):
     k = low
 
     while i < len(left) and j < len(right):
-        if left[i] < right[j]:
+        if left[i] <= right[j]:
             arr[k] = left[i]
-
             k += 1
             i += 1
+            
         else:
             arr[k] = right[j]
             k += 1
@@ -21,20 +21,19 @@ def merge_subarray(arr, low, mid, high):
 
     while i < len(left):
         arr[k] = left[i]
-
         k += 1
         i += 1
 
     while j < len(right):
-        k += 1
-        i += 1
         arr[k] = right[j]
-
         k += 1
-        i += 1
+        j += 1
 
 
 a = [10, 15, 20, 40, 8, 11, 55]
+low = 0
+high = len(a) - 1
+mid = (low + high ) //2
 
-merge_subarray(a, 0, 3, 6)
+merge_subarray(a, low, mid, high)
 print(a)
