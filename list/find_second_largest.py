@@ -3,53 +3,47 @@
 # [Method 1] : Using two loops time complexity : theta(n) 
 def get_second_max(arr):
 
-    if len(arr) <= 1:
-        return None
+    arr_len = len(arr)
+    if arr_len <= 1:
+        return "List must contain at least two elements"
     
-    first_lar = getmax(arr)
-    second_lar = None 
+    first_lar = second_lar = 0
 
-    for x in arr:
-        if x != first_lar:
-            if second_lar == None:
-                second_lar = x 
-            else:
-                second_lar = max(second_lar, x)
+    for i in range(arr_len):
+        if arr[i] > first_lar:
+            first_lar = arr[i]
 
-    return second_lar
-    
-def getmax(lst):
-    large = lst[0]
-    for ele in range(1, len(lst)):
-        if lst[ele] > large:
-            large = lst[ele]
-    return large
+    for i in range(arr_len):
+        if arr[i] > second_lar and arr[i] < first_lar:
+            second_lar = arr[i]
 
+    return second_lar if second_lar != 0 else "No second largest element"
+# time complexity if O(2n) == O(n)
 # ---------------------------------------------------------------------
 # Method 2 : using only one loop 
 
 def second_max(arr):
 
     if len(arr) <= 1:
-        return None
+        return "List must contain at least two elements"
     
-    lar = arr[0]
-    slar = None 
+    largest = arr[0]
+    second_lar = None 
 
-    for x in arr[1:]:
-
-        if x > lar:
-            slar = lar
-            lar = x 
+    for ele in arr[1:]:
+        if ele > largest:
+            second_lar = largest
+            largest = ele 
         
-        elif x != lar:
-            if slar == None or slar < x:
-                slar = x
+        elif ele != largest:
+            if second_lar == None or second_lar < ele:
+                second_lar = ele
 
-    return slar
+    return second_lar
 
-arr = [10,5,20,8]
+# arr = [10,5,20,8]
 # arr = [5, 20, 12, 10, 20, 10, 12]
+arr = [4,4]
 
-# print("Largest element in list : ",get_second_max(arr))
+# print("Second largest element in list : ",get_second_max(arr))
 print("Second Largest element is : ",second_max(arr))
