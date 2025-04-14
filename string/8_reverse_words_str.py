@@ -11,7 +11,8 @@ org_str = "Welcome to dsa"
 print(org_str)
 
 # temp = org_str.split(" ")
-# print(" ".join(temp[::-1]))
+# rev = temp[::-1]
+# print(" ".join(rev))
 
 print( " ".join(org_str.split(" ")[::-1]) )
 
