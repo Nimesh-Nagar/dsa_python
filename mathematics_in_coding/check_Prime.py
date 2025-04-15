@@ -11,7 +11,7 @@ def isPrime(num):
         
     return True 
 
-# Method 2: Time Complexity = O(n^1/2)
+# Method 2: Time Complexity = O(n^1/2) or O(√n)
 def isPrime2(num):
     
     if num == 1:
@@ -26,7 +26,7 @@ def isPrime2(num):
 
     return True 
 
-# Method 3 : 
+# Method 3 : time complexity O(√n) and space O(1)
 def isPrime3(num):
     if num == 1:
         return False
@@ -36,6 +36,7 @@ def isPrime3(num):
     if num % 2 == 0 or num % 3 == 0:
         return False
 
+    # All prime numbers greater than 3 can be written in the form of 6k ± 1
     i = 5
     while (i*i <= num):
         if num % i == 0 or num % (i+2) == 0:
@@ -46,6 +47,20 @@ def isPrime3(num):
 if __name__ == "__main__":
     n = 1031
     print(f"Check wether {n} is a Prime ? ")
+    print("True") if isPrime(n) else print("False")
     print("True") if isPrime2(n) else print("False")
     print("True") if isPrime3(n) else print("False")
 
+'''
+method 3 explanation 
+ Why start from 5 and use i and i+2?
+All prime numbers greater than 3 can be written in the form of 6k ± 1 (because numbers divisible by 2 or 3 have already been filtered).
+
+Ex: 5 = 6x1-1, 7 = 6x1+1, 11 = 6x2-1, 13 = 6x2+1, etc.
+
+This loop checks if num is divisible by i or i+2 — that is, 6k-1 and 6k+1.
+
+We increment by 6 (i += 6) each time to test the next pair (i, i+2).
+
+
+'''

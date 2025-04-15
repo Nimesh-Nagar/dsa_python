@@ -1,21 +1,26 @@
 def fibonacii(num):
-    first = 0
-    second = 1
+    first = 1
+    second = 0
 
     if num < 0:
         return "Number should be positive"
     
-    elif num == 0:
-        return first
-    
-    elif num == 1:
-        return second
-    
-    else: 
-        for cnt in range(2,num+1):
-            temp = first + second 
-            first = second 
-            second = temp 
-        return second
+    print(second, end=" ")
 
-print(fibonacii(6))
+    if num == 1:
+        return
+    
+    
+    
+    print(first, end=' ')
+    
+ 
+    for cnt in range(3,num+1):
+        current = first + second 
+        second = first 
+        first = current 
+        print(current, end=" ")
+
+    
+
+fibonacii(9)
