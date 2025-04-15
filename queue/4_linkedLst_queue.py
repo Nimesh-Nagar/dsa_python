@@ -63,8 +63,7 @@ print("------ Dequeue element ------")
 # # Dequeue elements from the queue
 q.dequeue()
 q.dequeue()
-
-print("-----------------------------------")
+print("-",*50)
 
 # # Enqueue more elements into the queue
 q.enqueue(30)
@@ -75,4 +74,4 @@ print("------ Dequeue element ------")
 # # Dequeue an element from the queue
 q.dequeue()
 
-print("-----------------------------------")
+print("-",*50)
