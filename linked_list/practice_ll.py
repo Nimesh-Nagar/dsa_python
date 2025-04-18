@@ -24,7 +24,7 @@ class LinkedList:
         print("NULL")
 
     # Length of linked list 
-    def length_ll(self):
+    def get_length(self):
         if self.head is None:
             return 0
         
@@ -57,8 +57,8 @@ class LinkedList:
 
     # insert at any index 
     def insert_at_index(self, index, value):
-        if index < 0 and index > self.length_ll():
-            raise Exception 
+        if index < 0 or index > self.get_length():
+            raise Exception("Invalid Index")
         
         if index == 0:
             self.insert_at_beginning(value)
@@ -84,15 +84,15 @@ ll = LinkedList()
 # ll.insert_at_beginning("Nimesh")
 
 # ll.printList()
-# print(ll.length_ll())
+# print(ll.get_length())
 
 ll.insert_at_end(67)
 ll.insert_at_end(65)
 ll.insert_at_end(45)
 
 ll.printList()
-print(ll.length_ll())
+print(ll.get_length())
 
-ll.insert_at_index(1, 30)    
+ll.insert_at_index(10, 30)    
 ll.printList()
 
