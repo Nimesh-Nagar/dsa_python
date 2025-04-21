@@ -45,11 +45,12 @@ def isPrime3(num):
     return True
 
 if __name__ == "__main__":
-    n = 1031
+    # n = 1031
+    n = 17
     print(f"Check wether {n} is a Prime ? ")
-    print("True") if isPrime(n) else print("False")
-    print("True") if isPrime2(n) else print("False")
-    print("True") if isPrime3(n) else print("False")
+    print("True") if isPrime(n) else print("False")  # method 1
+    print("True") if isPrime2(n) else print("False") # method 2
+    print("True") if isPrime3(n) else print("False") # method 3
 
 '''
 method 3 explanation 
