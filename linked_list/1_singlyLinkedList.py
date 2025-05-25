@@ -164,3 +164,4 @@ if __name__ == "__main__":
     print("\nDelete 2rd index in linked list")
     ll.remove_at(2)
     ll.printList()
+    print("Length of Linked List : ", ll.get_length() )
