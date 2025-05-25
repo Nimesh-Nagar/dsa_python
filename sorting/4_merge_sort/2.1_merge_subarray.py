@@ -30,7 +30,7 @@ def merge_subarray(arr, low, mid, high):
         j += 1
 
 
-a = [10, 15, 20, 40, 8, 11, 55]
+a = [10, 15, 15, 20, 40, 8,8, 11, 55]
 low = 0
 high = len(a) - 1
 mid = (low + high ) //2
